@@ -38,7 +38,7 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Dataset terdiri dari 10000 records dengan 10 buah fitur yang diukur.
 - Dataset terdiri dari 3 data kategori, dan 7 data numerik.
 
-### Variabel-variabel pada *dataset* adalah sebagai berikut:
+### Variabel-variabel pada *dataset*
 1. UID
    - Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
 2. Product ID
