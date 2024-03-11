@@ -78,59 +78,68 @@ Pada proses *Data Cleaning*, secara garis besar, terdapat tiga metode yang dapat
 - *Imputation* (metode yang dilakukan dengan cara mengganti nilai yang "hilang" atau tidak tersedia dengan nilai tertentu yang bisa berupa median atau mean dari data)
 - *Interpolation* (metode menghasilkan titik-titik data baru dalam suatu jangkauan dari suatu data)
   
-Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*. Namun, ditemukan *Mislabelled data*. Terdapat 18 data dengan Target ‘0’ namun memiliki label *‘Random Failure’* serta terdapat 9 data dengan Target ‘1’ namun memiliki label *‘No Failure’*. Metode yang digunakan untuk mengatasi hal ini adalah dengan melakukan pengakategorian antara ‘Target’ dan *Failure Type’*. Sementara itu, pada proyek ini tidak dilakukan penanganan terhadap *outliers*, hal ini dikarenakan penanganan terhadap outliers dapat menghilangkan variable *Failure Type*.
+Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*. Namun, ditemukan *Mislabelled data*. Sementara itu, pada proyek ini tidak dilakukan penanganan terhadap *outliers*, hal ini dikarenakan penanganan terhadap outliers dapat menghilangkan variable *Failure Type*.
 
+### Mislabelled Data
+Terdapat 18 data dengan Target ‘0’ namun memiliki label *‘Random Failure’* serta terdapat 9 data dengan Target ‘1’ namun memiliki label *‘No Failure’*. Metode yang digunakan untuk mengatasi hal ini adalah dengan melakukan pengakategorian antara ‘Target’ dan *Failure Type’*. 
+
+```
+machine.loc[machine['Failure Type'] == 'Random Failures', 'Target'] = 1
+machine.loc[machine['Failure Type'] == 'No Failure', 'Target'] = 0
+```
 
 ## DATA ANALYSIS (EDA)
-Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data.
-Analisis Univariat merupakan bentuk analisis data yang hanya merepresentasikan informasi yang terdapat pada satu variabel. Jenis visualisasi ini umumnya digunakan untuk memberikan gambaran terkait distribusi sebuah variabel dalam suatu *dataset*. 
+Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data melalui EDA. EDA/Exploratory Data Analysis adalah proses analisis data yang digunakan untuk menjelajahi, memahami, dan meringkas karakteristik dasar dari dataset secara visual dan deskriptif. Tujuan utama dari EDA adalah untuk memahami struktur dataset, menemukan pola atau tren yang menarik, mengidentifikasi outlier atau anomali, serta mempersiapkan data untuk tahap analisis yang lebih lanjut.
+
+Analisis Univariat merupakan bentuk analisis data yang hanya merepresentasikan informasi yang terdapat pada satu variabel. Jenis visualisasi ini umumnya digunakan untuk memberikan gambaran terkait distribusi sebuah variabel dalam suatu *dataset*. Berikut adalah visualisasi EDA dari Analisis Univariate dari data kategori dan numerik:
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/be01e8ff-c380-4a05-b828-46eaa673a47e)
+
+Gambar 4.1 Analisis Univariat *Type*(Data Kategori)
+
+Berdasarkan Gambar 4.1., diketahui bahwa terdapat 3 variansi kualitas mobil, yaitu Low (L), Medium (M), dan High (H). *Dataset* di dominansi oleh Tipe 'L' yang berjulah 6000 mesin, Tipe 'M' berjumlah 2997 mesin, dan Tipe 'H' berjumlah 1003 mesin.
+
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/64971f85-2da3-4b4b-8365-607111495ec6)
+
+Gambar 4.2. Analisis Univariat *Failure Type* (Data Kategori)
+
+Berdasarkan Gambar 4.2., dapat dilihat bahwa distribusi data kategori 'Failure Type' memiliki perbandingan jumlah yang tidak sama. Data di dominansi oleh data 'No Failure' dengan nilai 9652. Sementara itu, data paling sedikit adalah 'Random Failures' dengan nilai 18.
+
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/e1b7208c-75f7-41d6-9cd4-25b5e77d87f9)
+
+Gambar 4.3 Analisis Univariat (Data Numerik)
+
+Berdasarkan Gambar 4.3., Diketahui karakteristik dari data numerik adalah sebagai berikut:
+- Terdapat 600 mesin yang memiliki suhu udara antara 297K hingga 303K. Sementara sisanya memiliki suhu udara yang lebih rendah selama bekerja.
+- Terdapat  lebih dari 800 mesin yang mencapai suhu proses antara 310K hingga 311K. Juga mesin lain yang suhunya berada di antara 308K hingga 312K selama pemrosesan.
+- Terdapat  600 mesin yang mencapai putaran rotasi 1500 rpm, 500 mesin mencapai kecepatan rotasi 1400 hingga 1500 rpm, dan hanya ada sedikit mesin yang mencapai kecepatan rotasi maksimum 2000 rpm, mungkin kurang dari 100 mesin.
+- Terdapat  500 mesin yang mencapai torsi antara 35Nm hingga 45Nm.
+- Terdapat  mesin yang mungkin menghadapi kegagalan karena keausan pahat (min) hingga 220 keausan pahat min.
 
 
-Analisis Bivariat adalah analisis statistik yang dilakukan untuk memahami hubungan antara dua variabel dalam sebuah *dataset*. Ini melibatkan memeriksa hubungan atau ketergantungan antara dua variabel secara bersama-sama.
+Analisis Bivariat adalah analisis statistik yang dilakukan untuk memahami hubungan antara dua variabel dalam sebuah *dataset*. Ini melibatkan memeriksa hubungan atau ketergantungan antara dua variabel secara bersama-sama. Berikut adalah visualisasi EDA dari Analisis Bivariate:
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/9a73cf86-583b-4265-9864-1b4c35530048)
+Gambar 4.4 Analisis Bivariate antara 'Target' dengan Fitur *dataset*
 
-Analisis Multivariat tmerupakan jenis analisis data yang terdapat dalam lebih dari dua variabel. Jenis visualisasi ini digunakan untuk merepresentasikan hubungan dan pola yang terdapat dalam multidimensional data. 
+Berdasarkan Gambar 4.4., Hubungan antara setiap fitur dengan kategori 'Type' di dominannsi oleh data dengan nilai 'Type' 1, hal ini sejalan dengan lebih banyaknya data kategori 'No Failure' dibanding dengan tipe kegagalan lainnya.
 
-Selain melalui analisis, dilakukan juga Visualisasi Data. Memvisualisasikan data memberikan wawasan mendalam tentang perilaku berbagai fitur-fitur yang tersedia dalam *dataset*. Teknik visualisasi yang digunakan pada pembuatan model proyek ini adalah dengan menggunakan catplot yang digunakan untuk memplot distribusi data pada data kategori, pairplot yang digunakan untuk melakukan hubungan antar fitur dalam *dataset*, dan heatmap yang menampilkan korelasi antar fitur yang ada dalam *dataset* dalam bentuk matriks.
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/7fa058b6-79ab-443f-b9cb-813b4365c290)
+Gambar 4.5 Analisis Bivariate antara Data Numerik dengan *Failure Type*
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a4c93b8e-e2bd-4a08-8aee-a24ee0c5b6bc)
+Gambar 4.6 Analisis Bivariate antara Data Numerik dengan *Failure Type*
 
-Berikut adalah hasil Exploratory Data Analysis (EDA), dimana Gambar 1 merupakan EDA Analisis Univariat dan Gambar 2 merupakan EDA Analisis Multivariat.
+Berdasarkan Gambar 4.5., Diketahui bahwa kegagalan yang terjadi akibat parameter *Air Temperature [K]* dan *Process Temperature [K]* pada setiap jenis kegagalan cenderung sama yaitu pada nilai 300K. Pada parameter *Rotational Speed [rpm]* sebaran nilainya bervariasi, 'No Failure', 'Tool Wear Failure', dan 'Random Failures' berada di sekitar nilai 1500 rpm. sementara 'Power Failure' dengan nilai >1500 rpm. Pada parameter *Torque [Nm], nilai dari jenis kegagalan 'Overstrain Failure' >40 Nm. Berdasarkan Gambar 4.6., Diketahui bahwa kegagalan yang terjadi akibat parameter *Tool Wear [min]* juga bervariasi, dimana nilai dari jenis kegagalan 'Tool Wear Failure' >200 min.
 
-![download (2)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/97c7ccca-2ef8-4f02-aefa-e847c902dc25)
+Tabel diatas adalah Tabel yang menjelaskan hubungan dari banykanya nilai antara  variasi tipe mesin dengan jenis kegagalan yang terjadi. Sama seperti Gambar 4.1., Kegagalan mesin pada setiap jenis kegagalan di dominansi oleh mesin tipe 'L'.
 
-Gambar 1a. Analisis Univariat (Data Kategori)
-
-![download (3)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/5e4ae928-6257-4694-a78f-b538141ffc9c)
-
-Gambar 1b. Analisis Univariat (Data Numerik)
-
-Berdasarkan Gambar 1a , dapat dilihat bahwa distribusi data kategori untuk 'ocean_proximity' memiliki perbandingan jumlah yang tidak sama, untuk nilai data '<1H OCEAN' berjumlah 7607 dengan persentase 43.2% sedangkan nilai data 'ISLAND' hanya berjumlah 5. Lebih jauh, pada Gambar 1b, untuk data numerik memiliki karakteristik, yaitu:
-- koordinat longitude rumah mayoritas berada pada -118 derajat dan -122 derajat dan koordinat latitude rumah mayoritas berada pada 34 derajat dan 38 derajat
-- median dari umur rumah banyak terdistribusi pada rentang umur 10 - 40, namun nilai terbanyak terdapat pada nilai 50.
-- rata-rata terbanyak untuk data total room dan total bedroom yaitu di antara angka 1000-2000 room dan 200-400 bedroom.
-- rata-rata terbanyak untuk data population dan households berada di antara angka 500-1000 dan 200-400.
-- median income dan median house value terbanyak masing-masing berada di antara angka 3 dan 200000.
-- distribusi median house value miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model.
-
-![download (4)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/cc24f89a-96db-4b08-81d5-7828bddf6693)
-
-Gambar 2a. Analisis Multivariat (Data Kategori)
-
-![download (5)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/ac954bef-c429-495b-be3d-5a0c99ae3d21)
-
-Gambar 2b. Analisis Multivariat (Data Numerik)
-
-![download (6)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/ea33a151-4229-484b-a59d-6225572bff5b)
-
-Gambar 2c. Analisis Multivariat (Correlation Matrix)
-
-Pada Gambar 2a tampak persebaran data 'ocean proximity' terhadap 'median house value'. Dengan mengamati rata-rata 'median_house_value' relatif terhadap fitur kategori di atas, diperoleh insight sebagai berikut:
-- Pada fitur 'ocean_proximity', rata-rata 'median_house_value' cenderung bervariasi. Rentangnya berada antara 120000 hingga 400000.
-- Nilai 'median_house_value' tertinggi berada pada nilai 'ocean_proximity' yaitu 'ISLAND' dan nilai 'median_house_value' terendah berada pada nilai 'ocean_proximity' yaitu 'INLAND'. Sehingga, fitur 'ocean_proximity' memiliki pengaruh yang signifikan terhadap rata-rata 'median_house_value'.
-- Kesimpulan akhir, fitur kategori memiliki pengaruh terhadap fitur numerik 'median_house_value'.
+Analisis Multivariat merupakan jenis analisis data yang terdapat dalam lebih dari dua variabel. Jenis visualisasi ini digunakan untuk merepresentasikan hubungan dan pola yang terdapat dalam multidimensional data. Berikut adalah visualisasi EDA dari Analisis Multivariate:
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/cb036de3-e3e1-4021-b359-f536a610a32e)
+Gambar 4.7 Analisis Multivariat
 
 Pada Gambar 2b, dengan menggunakan fungsi pairplot dari library seaborn, tampak terlihat relasi pasangan dalam dataset. Dari gambar, terlihat plot relasi masing-masing fitur numerik pada dataset. Pada pola sebaran data grafik pairplot, terlihat bahwa 'median_income' memiliki korelasi dengan fitur 'median_house_value'. Sedangkan kedua fitur lainnya terlihat memiliki korelasi yang lemah karena sebarannya tidak membentuk pola
 
 Terakhir, Gambar 2c merupakan Correlation Matrix menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur 'median_income' memiliki skor korelasi yang cukup besar (0.63) dengan fitur target 'median_house_value'. Artinya, fitur 'median_house_value' berkorelasi cukup tinggi dengan keempat fitur tersebut. Sementara itu, fitur lainnya memiliki korelasi negatif sehingga fitur tersebut dapat dieliminasi.
-  
+
+Fitur UID serta Product ID memiliki korelasi negatif sehingga, fitur tersebut dapat di-drop.
 
 ## Modeling
 Seperti yang dijelaskan di awal, model yang dipilih adalah model regresi karena merupakan salah satu algoritma yang paling umum digunakan dalam pembuatan model prediksi. Dalam bentuk yang sederhana, regresi terdiri dari intersep dan slope yang dituliskan dalam rumusan berikut
