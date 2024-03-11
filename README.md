@@ -21,8 +21,7 @@ Pengembangan model *Predictive Failure Machine System* memiliki potensi yang sig
 ### Goals
 - Mengeksplorasi semua fitur yang tersedia pada *dataset* untuk melihat korelasi dan faktor apa saja yang paling berpengaruh sampai paling kurang berpengaruh terhadap kerusakan mesin
 - Melakukan proses *data wragling* dan *data preparation* terhadap *dataset* untuk membuat prediksi kerusakan mesin
-- Melakukan beberapa variasi model untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kerusakan mesin
-
+- Melakukan beberapa variasi model untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kerusakan mesin.
 
 ### Solution statements
 - Untuk eksplorasi fitur dilakukan Analisis Univariat, Analisis Bivariat dan Analisis Multivariat. Analisis Univariat dilakukan untuk mengeksploasi data numerik dan data kategorik. Analisis Bivariat dilakukan untuk melihat hubungan antar 2 fitur. Analisis Multivariat dilakukan untuk melihat hubungan antar fitur. Teknik yang digunakan adalah penggunaan catplot, pairplot, serta heatmap untuk melihat *Correlation Matrix* dari fitur yang dimiliki.
@@ -40,31 +39,31 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Dataset terdiri dari 3 data kategori, dan 7 data numerik.
 
 ### Variabel-variabel pada *dataset* adalah sebagai berikut:
-- UID
-  Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
-- Product ID
-  Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
-- Type
-  Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%) 
-- Air Temperature [K]
-  Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
-- Process Temperature [K]
-  Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
-- Rotational Speed [rpm]
-  Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal. 
-- Torque [Nm]
-  Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
-- Tool Wear [min]
-  Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
-- Target
-  Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
-- Failure Type
-  Jenis kegagalan mesin. Jika setidaknya satu dari jenis kegagalan di berikut benar, mesin diberikan label 'kegagalan mesin' dan diatur ke 1. 
-  - Tool Wear Failure (TWF)
-  - Heat Dissipation Failure (HDF)
-  - Power Failure (PWF)
-  - Overstrain Failure (OSF)
-  - Random Failures (RNF)
+1. UID
+   - Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
+2. Product ID
+   - Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
+4. Type
+   - Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
+6. Air Temperature [K]
+   - Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
+8. Process Temperature [K]
+   - Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
+10. Rotational Speed [rpm]
+    - Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal.
+12. Torque [Nm]
+    - Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
+14. Tool Wear [min]
+    - Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
+16. Target
+    - Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
+18. Failure Type
+    - Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
+        - Tool Wear Failure (TWF)
+        - Heat Dissipation Failure (HDF)
+        - Power Failure (PWF)
+        - Overstrain Failure (OSF)
+        - Random Failures (RNF)
 
 ## Data Preparation
 Pada proses *Data Preparation* dilakukan kegiatan seperti *Data Gathering*, *Data Assessing*, dan *Data Cleaning*. Pada proses *Data Gathering*, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan *dataframe* Pandas. Untuk proses *Data Assessing*, berikut adalah beberapa pengecekan yang dilakukan:
@@ -125,6 +124,7 @@ Berdasarkan Gambar 4.4., Hubungan antara setiap fitur dengan kategori 'Type' di 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/7fa058b6-79ab-443f-b9cb-813b4365c290)
 Gambar 4.5 Analisis Bivariate antara Data Numerik dengan *Failure Type*
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a4c93b8e-e2bd-4a08-8aee-a24ee0c5b6bc)
+
 Gambar 4.6 Analisis Bivariate antara Data Numerik dengan *Failure Type*
 
 Berdasarkan Gambar 4.5., Diketahui bahwa kegagalan yang terjadi akibat parameter *Air Temperature [K]* dan *Process Temperature [K]* pada setiap jenis kegagalan cenderung sama yaitu pada nilai 300K. Pada parameter *Rotational Speed [rpm]* sebaran nilainya bervariasi, 'No Failure', 'Tool Wear Failure', dan 'Random Failures' berada di sekitar nilai 1500 rpm. sementara 'Power Failure' dengan nilai >1500 rpm. Pada parameter *Torque [Nm], nilai dari jenis kegagalan 'Overstrain Failure' >40 Nm. Berdasarkan Gambar 4.6., Diketahui bahwa kegagalan yang terjadi akibat parameter *Tool Wear [min]* juga bervariasi, dimana nilai dari jenis kegagalan 'Tool Wear Failure' >200 min.
