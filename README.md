@@ -37,35 +37,16 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Dataset terdiri dari 3 data kategori, dan 7 data numerik.
 
 ### Variabel-variabel *dataset*
-UID
-Nilai unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
-
-Product ID
-Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
-
-Type
-Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
-
-Air Temperature [K]
-Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
-
-Process Temperature [K]
-Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
-
-Rotational Speed [rpm]
-    - Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal.
-
-Torque [Nm]
-Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
-
-Tool Wear [min]
-Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
-
-Target
-Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
-
-Failure Type
-Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
+- UID: Nilai unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
+- Product ID: Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
+- Type: Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
+- Air Temperature [K]: Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
+- Process Temperature [K]: Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
+- Rotational Speed [rpm]: Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal.
+- Torque [Nm]: Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
+- Tool Wear [min]: Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
+- Target: Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
+- Failure Type: Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
         - Tool Wear Failure (TWF)
         - Heat Dissipation Failure (HDF)
         - Power Failure (PWF)
