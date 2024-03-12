@@ -46,9 +46,9 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Torque [Nm]: Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
 - Tool Wear [min]: Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
 - Target: Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
-- Failure Type: Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
-        - Tool Wear Failure (TWF)
-        - Heat Dissipation Failure (HDF)
+- Failure Type: Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1.
+-         Tool Wear Failure (TWF)
+- Dissiion Failure (HDF)
         - Power Failure (PWF)
         - Overstrain Failure (OSF)
         - Random Failures (RNF)
