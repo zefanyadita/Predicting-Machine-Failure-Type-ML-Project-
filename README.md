@@ -4,8 +4,7 @@
 
 Perkembangan industri modern, khususnya yang berkaitan dengan konsep Industri 4.0, memerlukan interaksi mesin manufaktur, sensor, dan perangkat lunak khusus untuk menjamin efisiensi, produktivitas, dan keandalan proses produksi yang lebih baik [[1](https://www.researchgate.net/publication/337895714_Development_of_tools_utilization_monitoring_system_on_labor-intensive_manufacturing_industries)][[2](https://www.mdpi.com/2076-3417/11/12/5725)][[3](https://www.mdpi.com/1424-8220/20/23/6783)]. Salah satu aspek penting dalam menjamin kelangsungan proses produksi adalah dengan prediksi kerusakan pada alat yang digunakan. Seiring dengan otomatisasi dan digitalisasi, revolusi industri 4.0 memperkenalkan konsep pemeliharaan prediktif. Pemeliharaan Prediktif (PM) atau *Predictive Maintenance System* adalah metode untuk memantau status atau kerusakan pada mesin untuk mencegah kegagalan yang mahal terjadi dan untuk melakukan pemeliharaan ketika benar-benar diperlukan [[4](https://www.mdpi.com/1424-8220/23/23/9346#B1-sensors-23-09346)][[5](https://www.sciencedirect.com/science/article/pii/S240589631931122X)]. Estimasi yang tepat memungkinkan untuk mengurangi biaya yang terkait sebagai akibat kerusakan pada masing-masing alat atau mesin [[6](https://www.mdpi.com/2076-3417/13/8/4971)].
 
-Pemeliharaan Prediktif menggabungkan kemampuan pengumpulan data dengan kapasitas untuk melakukan analisis yang efektif dan terintegrasi (*Machine Learning*) [[7](https://ieeexplore.ieee.org/document/8449150)]. Prediksi kegagalan mesin menggunakan Machine Learning dapat meningkatkan ketergantungan operasional, sehingga memungkinkan pemeliharaan proaktif dan meminimalkan waktu henti. 
-Secara khusus, metode regresi sering digunakan untuk memprediksi kerusakan peralatan karena kemampuannya dalam memodelkan hubungan antara variabel yang berbeda [[8](https://www.sciencedirect.com/science/article/abs/pii/S0141029620340633)].
+Pemeliharaan Prediktif menggabungkan kemampuan pengumpulan data dengan kapasitas untuk melakukan analisis yang efektif dan terintegrasi (*Machine Learning*) [[7](https://ieeexplore.ieee.org/document/8449150)]. Teknik pembelajaran mesin (ML) muncul sebagai alat yang menjanjikan dalam aplikasi PdM untuk memprediksi kegagalan peralatan guna meminimalkan waktu henti dan mendapatkan keuntungan bagi organisasi. Secara khusus, metode regresi sering digunakan untuk memprediksi kerusakan peralatan karena kemampuannya dalam memodelkan hubungan antara variabel yang berbeda [[8](https://www.sciencedirect.com/science/article/abs/pii/S0141029620340633)].
 
 ## Business Understanding
 Pengembangan model *Predictive Failure Machine System* memiliki potensi yang signifikan sebagai alat bantu dalam pengambilan keputusan khususnya pada bidang industri dan manufaktur.
@@ -39,34 +38,34 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 
 ### Variabel-variabel *dataset*
 UID
-   - Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
+Nilai unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
 
 Product ID
-   - Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
+Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
 
 Type
-   - Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
+Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
 
 Air Temperature [K]
-   - Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
+Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
 
 Process Temperature [K]
-   - Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
+Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
 
 Rotational Speed [rpm]
     - Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal.
 
 Torque [Nm]
-    - Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
+Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
 
 Tool Wear [min]
-    - Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
+Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
 
 Target
-    - Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
+Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
 
 Failure Type
-    - Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
+Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
         - Tool Wear Failure (TWF)
         - Heat Dissipation Failure (HDF)
         - Power Failure (PWF)
