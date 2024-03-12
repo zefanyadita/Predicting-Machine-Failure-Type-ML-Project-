@@ -154,7 +154,7 @@ Berdasarkan Gambar 4.5 tampak persebaran data 'Failure Type' yang relatif terhad
 - Sehingga, dapat disimpulkan bahwa fitur kategori 'Failure Type' memiliki pengaruh terhadap fitur numerik. Dimana jenis kegagalan yang terjadi berhubungan dengan jenis parameter atau fitur penyebabnya.
 
 Berikut adalah Tabel Analisis Bivariate antara fitur 'Type' dengan 'Failure Type':
-| Type|| Failure Type | Heat Dissipation Failure | No Failure | Overstrain Failure | Power Failure | Random Failures | Tool Wear Failure |
+| Type/Failure Type | Heat Dissipation Failure | No Failure | Overstrain Failure | Power Failure | Random Failures | Tool Wear Failure |
 | --- | --- | --- | --- | --- | --- | --- |
 | H | 8 | 979 | 1 | 5 | 4 | 6 |
 | L | 74 | 5757 | 73 | 59 | 12 | 25 |
