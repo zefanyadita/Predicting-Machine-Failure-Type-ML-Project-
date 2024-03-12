@@ -47,11 +47,11 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Tool Wear [min]: Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
 - Target: Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
 - Failure Type: Menyatakan enis kegagalan mesin.
--   Tool Wear Failure (TWF)
--   Dissiion Failure (HDF)
--   Power Failure (PWF)
--   Overstrain Failure (OSF)
--   Random Failures (RNF)
+          -  Tool Wear Failure (TWF)
+          -  Heat Dissipation Failure (HDF)
+          -  Power Failure (PWF)
+          -  Overstrain Failure (OSF)
+          -  Random Failures (RNF)
 
 ## DATA ANALYSIS (EDA)
 Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data melalui EDA. EDA/Exploratory Data Analysis adalah proses analisis data yang digunakan untuk menjelajahi, memahami, dan meringkas karakteristik dasar dari dataset secara visual dan deskriptif. Tujuan utama dari EDA adalah untuk memahami struktur dataset, menemukan pola atau tren yang menarik, serta mempersiapkan data untuk tahap analisis yang lebih lanjut.
