@@ -8,7 +8,6 @@ Pemeliharaan Prediktif menggabungkan kemampuan pengumpulan data dengan kapasitas
 Secara khusus, metode regresi sering digunakan untuk memprediksi kerusakan peralatan karena kemampuannya dalam memodelkan hubungan antara variabel yang berbeda [[8](https://www.sciencedirect.com/science/article/abs/pii/S0141029620340633)].
 
 ## Business Understanding
-
 Pengembangan model *Predictive Failure Machine System* memiliki potensi yang signifikan sebagai alat bantu dalam pengambilan keputusan khususnya pada bidang industri dan manufaktur.
 
 *Predictive Failure Machine System* adalah sistem yang memiliki potensi besar dalam meningkatkan efisiensi operasional, mengurangi downtime produksi, meningkatkan keselamatan dan kesehatan pekerja, serta meningkatkan kualitas produk dan membantu perusahaan untuk tetap kompetitif di pasar yang semakin kompetitif dan dinamis.
@@ -38,7 +37,7 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Dataset terdiri dari 10000 records dengan 10 buah fitur yang diukur.
 - Dataset terdiri dari 3 data kategori, dan 7 data numerik.
 
-### Variabel-variabel pada *dataset*
+### Variabel-variabel *dataset*
 UID
    - Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
 Product ID
@@ -65,58 +64,11 @@ Failure Type
         - Overstrain Failure (OSF)
         - Random Failures (RNF)
 
-## Data Preparation
-Pada proses *Data Preparation* dilakukan kegiatan seperti *Data Gathering*, *Data Assessing*, dan *Data Cleaning*. Pada proses *Data Gathering*, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan *dataframe* Pandas. Untuk proses *Data Assessing*, berikut adalah beberapa pengecekan yang dilakukan:
-- *Duplicate* data (data yang serupa dengan data lainnya)
-- *Missing value* (data atau informasi yang "hilang" atau tidak tersedia)
-- *Mislabelled* data (klasifikasi/label data yang tidak sesuai dengan kelas atau kelompok sebenarnya)
-- *Outlier* (data yang menyimpang dari rata-rata sekumpulan data yang ada)
-
-Pada proses *Data Cleaning*, secara garis besar, terdapat tiga metode yang dapat digunakan antara lain seperti berikut:
-- *Dropping* (metode yang dilakukan dengan cara menghapus sejumlah baris data)
-- *Imputation* (metode yang dilakukan dengan cara mengganti nilai yang "hilang" atau tidak tersedia dengan nilai tertentu yang bisa berupa median atau mean dari data)
-- *Interpolation* (metode menghasilkan titik-titik data baru dalam suatu jangkauan dari suatu data)
-  
-Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*. Namun, ditemukan *Mislabelled data*. Sementara itu, pada proyek ini tidak dilakukan penanganan terhadap *outliers*, hal ini dikarenakan penanganan terhadap outliers dapat menghilangkan variable *Failure Type*.
-
-### Mislabelled Data
-Pada *dataset*, terdapat kesalahan pengkategorian jenis data. Ditemukan 18 data dengan Target ‘0’ namun memiliki label *‘Random Failure’* serta terdapat 9 data dengan Target ‘1’ namun memiliki label *‘No Failure’*.  
-```
-Failure_machine = machine[['Target','Failure Type']][machine['Target'] == 0]
-Failure_machine.value_counts()
-```
-| Target | Failure Type | Count |
-| :---: | :---: | :---: |
-| 0 | No Failure | 9643 |
-| 0 | Random Failures | 18 |
-```
-Failure_machine_Type = machine[['Target','Failure Type']][machine['Failure Type'] == 'No Failure']
-Failure_machine_Type.value_counts()
-```
-| Target | Failure Type | Count |
-| :---: | :---: | :---: |
-| 0 | No Failure | 9643 |
-| 1 | No Failure | 9 |
-
-Untuk mengatasi ini, dilakukan pengakategorian antara ‘Target’ dan *Failure Type’* agar data dengan nilai '0' memiliki label 'No Failure' dan data dengan nilai '1' memiliki label 'Random Failures'
-```
-machine.loc[machine['Failure Type'] == 'Random Failures', 'Target'] = 1
-machine.loc[machine['Failure Type'] == 'No Failure', 'Target'] = 0
-```
-sehingga didapatkan label dengan jumlah data yang sesuai
-| Target | Failure Type | Count |
-| :---: | :---: | :---: |
-| 0 | No Failure | 9652 |
-```
-machine.Target.value_counts()
-```
-| 0 | 9652| 
-| 1 | 348 | 
-
 ## DATA ANALYSIS (EDA)
 Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data melalui EDA. EDA/Exploratory Data Analysis adalah proses analisis data yang digunakan untuk menjelajahi, memahami, dan meringkas karakteristik dasar dari dataset secara visual dan deskriptif. Tujuan utama dari EDA adalah untuk memahami struktur dataset, menemukan pola atau tren yang menarik, serta mempersiapkan data untuk tahap analisis yang lebih lanjut.
 
 Analisis Univariat
+
 Analisis Univariat merupakan bentuk analisis data yang hanya merepresentasikan informasi yang terdapat pada satu variabel. Jenis visualisasi ini umumnya digunakan untuk memberikan gambaran terkait distribusi sebuah variabel dalam suatu *dataset*. Berikut adalah visualisasi EDA dari Analisis Univariate dari data kategori dan numerik:
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/be01e8ff-c380-4a05-b828-46eaa673a47e)
 
@@ -140,6 +92,7 @@ Berdasarkan Gambar 4.3, Diketahui karakteristik dari data numerik adalah sebagai
 - Terdapat  mesin yang mungkin menghadapi kegagalan karena keausan pahat(Tool Wear [min]) (min) hingga 220 keausan pahat min.
 
 Anaisis Bivariat
+
 Analisis Bivariat adalah analisis statistik yang dilakukan untuk memahami hubungan antara dua variabel dalam sebuah *dataset*. Ini melibatkan hubungan atau ketergantungan antara dua variabel secara bersama-sama. Berikut adalah visualisasi EDA dari Analisis Bivariate:
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/9a73cf86-583b-4265-9864-1b4c35530048)
 Gambar 4.4 Analisis Bivariate antara kategori 'Target' dengan Fitur *dataset*
@@ -169,20 +122,103 @@ Tabel 1. Analisis Bivariate fitur 'Type' dengan 'Failure Type'
 Tabel diatas adalah Tabel yang menjelaskan hubungan dari banykanya nilai antara  variasi tipe mesin dengan jenis kegagalan yang terjadi. Sama seperti Gambar 4.1, Kegagalan mesin pada setiap jenis kegagalan di dominansi oleh mesin tipe 'L'.
 
 Analisis Multivariat
+
 Analisis Multivariat merupakan jenis analisis data yang terdapat dalam lebih dari dua variabel. Jenis visualisasi ini digunakan untuk merepresentasikan hubungan dan pola yang terdapat dalam multidimensional data. Berikut adalah visualisasi EDA dari Analisis Multivariate:
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/cb036de3-e3e1-4021-b359-f536a610a32e)
 Gambar 4.7 Analisis Multivariat
 
 Pada Gambar 4.7, dengan menggunakan fungsi pairplot dari library seaborn, tampak terlihat relasi pasangan dalam dataset. Dari gambar, terlihat plot relasi masing-masing fitur numerik pada dataset. Pada pola sebaran data grafik pairplot, terlihat bahwa fitur numerik 'Rotational Speed [rpm]' memiliki korelasi dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sementara itu, tampak sebaran pair plot antara data numerik dengan fitru 'Target'.
 
-
 Gambar 4.8 Correlation Matrix Numeric Fiture
 Gambar 4.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
 
 Jika diamati, fitur 'Target' memiliki skor korelasi yang cukup untuk menunjukkan adanya hubungan korelasi dengan fitur numerik. Semenara itu, fitur UID memiliki korelasi yang negatif. Sehingga, fitur UID dan Product ID tersebut akan dieliminasi atau drop.
 
-## Data Pre-Processing (Featurinng Engineering)
-Sebelum melakukan pemodelan, dilakukan encoding pada data kategori untuk menjadi numerik. Dalam hal ini, akan dilakuakn proces pengkodean pada fitur 'Type' dan 'Failure Type'
+## Data Preparation
+Pada proses *Data Preparation* dilakukan kegiatan seperti *Data Gathering*, *Data Assessing*, dan *Data Cleaning*. Pada proses *Data Gathering*, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan *dataframe* Pandas. Untuk proses *Data Assessing*, berikut adalah beberapa pengecekan yang dilakukan:
+- *Duplicate* data (data yang serupa dengan data lainnya)
+- *Missing value* (data atau informasi yang "hilang" atau tidak tersedia)
+- *Outlier* (data yang menyimpang dari rata-rata sekumpulan data yang ada)
+
+Pada proses *Data Cleaning*, secara garis besar, terdapat tiga metode yang dapat digunakan antara lain seperti berikut:
+- *Dropping* (metode yang dilakukan dengan cara menghapus sejumlah baris data)
+- *Imputation* (metode yang dilakukan dengan cara mengganti nilai yang "hilang" atau tidak tersedia dengan nilai tertentu yang bisa berupa median atau mean dari data)
+- *Interpolation* (metode menghasilkan titik-titik data baru dalam suatu jangkauan dari suatu data)
+Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*.
+
+### Outliers
+
+Berdasarkan boxplot, ditemui kemungkinan outlier pada fitur 'Rotation speed [rpm]' dan 'Torque [Nm]'. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
+
+### Anomalie Target
+Dilakukan pengamatan terhadap distribusi target untuk menemukan ketidakseimbangan dan memperbaikinya sebelum membagi dataset. Anomali pertama yang ditemukan adalah adanya jenis kegagalan 'Random Failures' yang memiliki target 0.
+```
+Failure_machine = machine[['Target','Failure Type']][machine['Target'] == 0]
+Failure_machine.value_counts()
+```
+| Target | Failure Type | Count |
+| :---: | :---: | :---: |
+| 0 | No Failure | 9643 |
+| 0 | Random Failures | 18 |
+
+Untuk menangani hal tersebut, karena anomail jenis kegagalan mesin 'Random Failure' hanya terjadi pada 18 pengamatan dan bersifat acak dan tidak dapat diprediksi, sehingga data kegagalan mesin 'Random Failure' akan dihapus. Anolai kedua adalah terdapat 9 data dengan Target ‘1’ namun memiliki label ‘No Failure’.
+```
+Failure_machine_Type = machine[['Target','Failure Type']][machine['Failure Type'] == 'No Failure']
+Failure_machine_Type.value_counts()
+```
+| Target | Failure Type | Count |
+| :---: | :---: | :---: |
+| 0 | No Failure | 9643 |
+| 1 | No Failure | 9 |
+
+Data pada keadaan anomali tersebut merupakan data yang ambigu dikarenakan Kita tidak dapat mengetahui apakah benar-benar terjadi kegagalan atau tidak. Sehingga, untuk menangani hal tersebut 9 data ini dihapus.
+
+### Encoding
+Encoding data adalah proses mengonversi variabel kategoris menjadi bentuk numerik sehingga dapat dimengerti oleh algoritma machine learning atau model statistik. Dalam hal ini, kita melakukan encoding pada 2 fitur, yaitu fitur 'Type' dan 'Failure Type'. Berikut adalah hasil encoding pada fitur 'Type':
+| Type | Encoded | Count |
+| :---: | :---: | :---: |
+| L | 0 | 5984 |
+| M | 1 | 2991 |
+| H | 2 | 998 |
+
+Berikut adalah hasil encoding pada fitur 'Failure Type':
+| Failure Type | Encoded | Count |
+| :---: | :---: | :---: |
+| No Failure | 1 | 9643 |
+| Heat Dissipation Failure | 0 | 112 |
+| Power Failure | 3 | 95 |
+| Overstrain Failure | 2 | 78 |
+| Tool Wear Failure | 4 | 45 |
+
+### Reduction with PCA
+```
+pca = PCA(n_components=2, random_state=123)
+```
+Reduksi dimensi dengan PCA (Principal Component Analysis) adalah teknik yang digunakan untuk mengurangi jumlah fitur (variabel) dalam dataset, tetapi tetap mempertahankan sebanyak mungkin informasi yang mungkin. Berdasarkan analisis multivariat yang dilakukan, diketahui bahwa terdapat korelasi antara 'Rotational Speed [rpm]' dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sehingga, dilakukan reduksi PCA pada fitur-fitur tersebut. 
+
+Gambar 3 Visualisasi Hubungan antar Fitur sebelum Reduksi PCA
+Hasil dari Reduksi PCA adalah 94.4% informasi pada kedua fitur 'Air temperature [K]' dan 'Process temperature [K]' terdapat pada PC1. Sedangkan sisanya, sebesar 5.6% terdapat pada PC2.
+Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Temperature' menggantikan kedua fitur lainnya ('Air temperature [K]' dan 'Process temperature [K]'). 
+
+Gambar 3 Visualisasi Hubungan antar Fitur sebelum Reduksi PCA
+Output dari kode diatas adalah 99.9% informasi pada kedua fitur 'Rotational speed [rpm]' dan 'Torque [Nm]' terdapat pada PC1. Sedangkan sisanya, sebesar 0.1% terdapat pada PC2.
+Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Machine Power' menggantikan kedua fitur lainnya ('Rotational speed [rpm]' dan 'Torque [Nm]').
+
+
+### Train-Test Split
+Setelah data dibersihkan, dataset dibagi menjadi data train dan data test untuk proses Modeling, dimana rasio pembagian data yang dipilih adalah 90:10 mengingat data test untuk rasio tersebut sudah terbilang cukup. Namun, diketahui bahwa jumlah kategori pada fitur 'Failure Type' tidak seimbang. Sehingga untuk menangani hal tersebut, dilakukan Oversampling dengan SMOTE.
+
+### Over Sampling With SMOTE
+Oversampling dengan SMOTE (Synthetic Minority Over-sampling Technique) adalah teknik yang digunakan untuk menangani ketidakseimbangan kelas dalam dataset dengan meningkatkan jumlah sampel dalam kelas minoritas. Oversampling dengan SMOTE dilakukan agar sample data antar kategori dapat seimbang ketika dilakukan trainining model. 
+```
+smt = SMOTETomek(sampling_strategy ='auto',random_state=123)
+```
+Berikut adalah grafik pembagian sample data train
+
+
+Berikut adalah detail dari dataset:
+Total sampel di dalam dataset train: 15848
+Total sampel di dalam dataset test: 1761
 
 ## Modeling
 Model yang digunakan untuk memprediksi kegagalan mesin adalah model regresi. Dalam bentuk yang sederhana, regresi terdiri dari intersep dan slope yang dituliskan dalam rumusan berikut:
