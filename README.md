@@ -2,7 +2,7 @@
 
 ## Domain Proyek
 
-Perkembangan industri modern, khususnya yang berkaitan dengan konsep Industri 4.0, memerlukan interaksi mesin manufaktur, sensor, dan perangkat lunak khusus untuk menjamin efisiensi, produktivitas, dan keandalan proses produksi yang lebih baik [[1](https://www.researchgate.net/publication/337895714_Development_of_tools_utilization_monitoring_system_on_labor-intensive_manufacturing_industries)] [[2](https://www.mdpi.com/2076-3417/11/12/5725)] [[3](https://www.mdpi.com/1424-8220/20/23/6783)]. Salah satu aspek penting dalam menjamin kelangsungan proses produksi adalah dengan prediksi kerusakan pada alat yang digunakan. Seiring dengan otomatisasi dan digitalisasi, revolusi industri 4.0 memperkenalkan konsep pemeliharaan prediktif. Pemeliharaan Prediktif (PM) atau *Predictive Maintenance System* adalah metode untuk memantau status atau kerusakan pada mesin untuk mencegah kegagalan yang mahal terjadi dan untuk melakukan pemeliharaan ketika benar-benar diperlukan [[4](https://www.mdpi.com/1424-8220/23/23/9346#B1-sensors-23-09346)] [[5](https://www.sciencedirect.com/science/article/pii/S240589631931122X)]. Estimasi yang tepat memungkinkan untuk mengurangi biaya yang terkait sebagai akibat kerusakan pada masing-masing alat atau mesin [[6](https://www.mdpi.com/2076-3417/13/8/4971)].
+Perkembangan industri modern, khususnya yang berkaitan dengan konsep Industri 4.0, memerlukan interaksi mesin manufaktur, sensor, dan perangkat lunak khusus untuk menjamin efisiensi, produktivitas, dan keandalan proses produksi yang lebih baik [[1](https://www.researchgate.net/publication/337895714_Development_of_tools_utilization_monitoring_system_on_labor-intensive_manufacturing_industries)][[2](https://www.mdpi.com/2076-3417/11/12/5725)][[3](https://www.mdpi.com/1424-8220/20/23/6783)]. Salah satu aspek penting dalam menjamin kelangsungan proses produksi adalah dengan prediksi kerusakan pada alat yang digunakan. Seiring dengan otomatisasi dan digitalisasi, revolusi industri 4.0 memperkenalkan konsep pemeliharaan prediktif. Pemeliharaan Prediktif (PM) atau *Predictive Maintenance System* adalah metode untuk memantau status atau kerusakan pada mesin untuk mencegah kegagalan yang mahal terjadi dan untuk melakukan pemeliharaan ketika benar-benar diperlukan [[4](https://www.mdpi.com/1424-8220/23/23/9346#B1-sensors-23-09346)][[5](https://www.sciencedirect.com/science/article/pii/S240589631931122X)]. Estimasi yang tepat memungkinkan untuk mengurangi biaya yang terkait sebagai akibat kerusakan pada masing-masing alat atau mesin [[6](https://www.mdpi.com/2076-3417/13/8/4971)].
 
 Pemeliharaan Prediktif menggabungkan kemampuan pengumpulan data dengan kapasitas untuk melakukan analisis yang efektif dan terintegrasi (*Machine Learning*) [[7](https://ieeexplore.ieee.org/document/8449150)]. Prediksi kegagalan mesin menggunakan Machine Learning dapat meningkatkan ketergantungan operasional, sehingga memungkinkan pemeliharaan proaktif dan meminimalkan waktu henti. 
 Secara khusus, metode regresi sering digunakan untuk memprediksi kerusakan peralatan karena kemampuannya dalam memodelkan hubungan antara variabel yang berbeda [[8](https://www.sciencedirect.com/science/article/abs/pii/S0141029620340633)].
@@ -39,25 +39,25 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Dataset terdiri dari 3 data kategori, dan 7 data numerik.
 
 ### Variabel-variabel pada *dataset*
-1. UID
+UID
    - Pengidentifikasi unik yang menunjukkan bahwa setiap titik data berhubungan dengan peristiwa atau pengamatan tertentu dalam proses manufaktur (nilai 1 - 10.000).
-2. Product ID
+Product ID
    - Nomor seri khusus dari Type. Hal ini dapat mengindikasikan jenis atau variasi produk yang berbeda yang diproduksi oleh mesin.
-3. Type
+Type
    - Varian Kualitas Produk, teridir dari 3 kategori, Low (L) (50% dari seluruh produk), Medium (M) (30%), dan High (H) (20%)
-4. Air Temperature [K]
+Air Temperature [K]
    - Suhu Udara yang dihasilkan menggunakan proses random walk kemudian dinormalisasi ke standar deviasi 2 K sekitar 300 K
-5. Process Temperature [K]
+Process Temperature [K]
    - Suhu Proses pada mesin yang dihasilkan menggunakan proses random walk dan dinormalisasi.
-6. Rotational Speed [rpm]
+Rotational Speed [rpm]
     - Kecepatan rotasi mesin, yang dihitung berdasarkan daya 2860 W dan termasuk kebisingan yang terdistribusi secara normal.
-7. Torque [Nm]
+Torque [Nm]
     - Torsi yang diterapkan pada mesin, biasanya terdistribusi sekitar 40 Nm dengan Ïƒ = 10 Nm dan tidak ada nilai negatif.
-8. Tool Wear [min]
+Tool Wear [min]
     - Keausan alat berhubungan dengan varian kualitas mesin (H/M/L). Hal ini menunjukkan bahwa alat digunakan bersama dengan mesin selama proses manufaktur.
-9. Target
+Target
     - Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
-10. Failure Type
+Failure Type
     - Menyatakan enis kegagalan mesin. Jika satu dari jenis kegagalan berikut benar, maka mesin diberikan label 'Failure Machine' dan 'Target' menjadi 1. 
         - Tool Wear Failure (TWF)
         - Heat Dissipation Failure (HDF)
@@ -86,7 +86,7 @@ Failure_machine = machine[['Target','Failure Type']][machine['Target'] == 0]
 Failure_machine.value_counts()
 ```
 | Target | Failure Type | Count |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | 0 | No Failure | 9643 |
 | 0 | Random Failures | 18 |
 ```
@@ -94,7 +94,7 @@ Failure_machine_Type = machine[['Target','Failure Type']][machine['Failure Type'
 Failure_machine_Type.value_counts()
 ```
 | Target | Failure Type | Count |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | 0 | No Failure | 9643 |
 | 1 | No Failure | 9 |
 
@@ -105,8 +105,13 @@ machine.loc[machine['Failure Type'] == 'No Failure', 'Target'] = 0
 ```
 sehingga didapatkan label dengan jumlah data yang sesuai
 | Target | Failure Type | Count |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | 0 | No Failure | 9652 |
+```
+machine.Target.value_counts()
+```
+| 0 | 9652| 
+| 1 | 348 | 
 
 ## DATA ANALYSIS (EDA)
 Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data melalui EDA. EDA/Exploratory Data Analysis adalah proses analisis data yang digunakan untuk menjelajahi, memahami, dan meringkas karakteristik dasar dari dataset secara visual dan deskriptif. Tujuan utama dari EDA adalah untuk memahami struktur dataset, menemukan pola atau tren yang menarik, serta mempersiapkan data untuk tahap analisis yang lebih lanjut.
@@ -155,10 +160,11 @@ Berdasarkan Gambar 4.5 tampak persebaran data 'Failure Type' yang relatif terhad
 
 Berikut adalah Tabel Analisis Bivariate antara fitur 'Type' dengan 'Failure Type':
 | Type/Failure Type | Heat Dissipation Failure | No Failure | Overstrain Failure | Power Failure | Random Failures | Tool Wear Failure |
-| --- | --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | H | 8 | 979 | 1 | 5 | 4 | 6 |
 | L | 74 | 5757 | 73 | 59 | 12 | 25 |
 | 8 | 30 | 2916 | 4 | 31 | 2 | 14 |
+
 Tabel 1. Analisis Bivariate fitur 'Type' dengan 'Failure Type'
 Tabel diatas adalah Tabel yang menjelaskan hubungan dari banykanya nilai antara  variasi tipe mesin dengan jenis kegagalan yang terjadi. Sama seperti Gambar 4.1, Kegagalan mesin pada setiap jenis kegagalan di dominansi oleh mesin tipe 'L'.
 
@@ -174,6 +180,9 @@ Gambar 4.8 Correlation Matrix Numeric Fiture
 Gambar 4.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
 
 Jika diamati, fitur 'Target' memiliki skor korelasi yang cukup untuk menunjukkan adanya hubungan korelasi dengan fitur numerik. Semenara itu, fitur UID memiliki korelasi yang negatif. Sehingga, fitur UID dan Product ID tersebut akan dieliminasi atau drop.
+
+## Data Pre-Processing (Featurinng Engineering)
+Sebelum melakukan pemodelan, dilakukan encoding pada data kategori untuk menjadi numerik. Dalam hal ini, akan dilakuakn proces pengkodean pada fitur 'Type' dan 'Failure Type'
 
 ## Modeling
 Model yang digunakan untuk memprediksi kegagalan mesin adalah model regresi. Dalam bentuk yang sederhana, regresi terdiri dari intersep dan slope yang dituliskan dalam rumusan berikut:
