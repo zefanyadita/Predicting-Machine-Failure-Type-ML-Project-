@@ -319,18 +319,19 @@ Tabel 2. Perbandingan Model
 Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 341700 dan nilai RF1 dan RF2 masing-masing yaitu 347466.0 dan 315645.2. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
 
 ## Referensi:
-[1] Hassan, Mohammad Mujaheed & Ahmad, Nobaya & Hariza, Ahmad & Hashim, Ahmad. (2021). Factors Influencing Housing Purchase Decision. 11. 429-443. 10.6007/IJARBSS/v11-i7/10295.
+[1] Harja, H.B. et al. (2019) ‘Development of tools utilization monitoring system on labor-intensive manufacturing industries’, AIP Conference Proceedings [Preprint]. doi:10.1063/1.5138309.
 
-[2] Ariyawansa, Ranthilaka. (2009). Housing Market: A Review of Purchase Decision of Potential Buyers.
+[2] Jamwal, A. et al. (2021) ‘Industry 4.0 technologies for manufacturing sustainability: A systematic review and Future Research Directions’, Applied Sciences, 11(12), p. 5725. doi:10.3390/app11125725. 
 
-[3] Jiang, Jiaxin & Zhang, Jin. (2021). Analysis of County Consumers’ Housing Purchase Intention and Influencing Factors. 
+[3] Kalsoom, T. et al. (2020) ‘Advances in sensor technologies in the era of Smart Factory and industry 4.0’, Sensors, 20(23), p. 6783. doi:10.3390/s20236783. 
 
-[4] Heymann, Sommervoll. (2019). House prices and relative location
+[4] Paszkiewicz, A. et al. (2023) ‘Estimation of tool life in the milling process—testing regression models’, Sensors, 23(23), p. 9346. doi:10.3390/s23239346. 
 
-[5] Jayasekare, Ajith & Herath, Shanaka & Wickramasuriya, Rohan & Perez, Pascal. (2019). The price of a view: Estimating the impact of view on house prices. Pacific Rim Property Research Journal. 25. 1-18. 10.1080/14445921.2019.1626543. 
+[5] Traini, E. et al. (2019) ‘Machine learning framework for predictive maintenance in milling’, IFAC-PapersOnLine, 52(13), pp. 177–182. doi:10.1016/j.ifacol.2019.11.172. 
 
-[6] Agarwal, Umang & Gupta, Smriti & Goyal, Madhav. (2022). House Price Prediction using Linear Regression. 10.13140/RG.2.2.11175.62887. 
+[6] Rojek, I. et al. (2023) ‘An artificial intelligence approach for improving maintenance to supervise machine failures and support their repair’, Applied Sciences, 13(8), p. 4971. doi:10.3390/app13084971. 
 
-[7] Li, Xinshu. (2022). Prediction and Analysis of Housing Price Based on the Generalized Linear Regression Model. Computational Intelligence and Neuroscience. 2022. 1-9. 10.1155/2022/3590224. 
+[7] Paolanti, M. et al. (2018) ‘Machine Learning Approach for predictive maintenance in industry 4.0’, 2018 14th IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA) [Preprint]. doi:10.1109/mesa.2018.8449150. 
 
-[8] Zietz, Joachim & Zietz, Emily & Sirmans, G.. (2008). Determinants of House Prices: A Quantile Regression Approach. The Journal of Real Estate Finance and Economics. 37. 317-333. 10.1007/s11146-007-9053-7. 
+[8] Soo Lon Wah, W., Chen, Y.-T. and Owen, J.S. (2021) ‘A regression-based damage detection method for structures subjected to changing environmental and operational conditions’, Engineering Structures, 228, p. 111462. doi:10.1016/j.engstruct.2020.111462. 
+
