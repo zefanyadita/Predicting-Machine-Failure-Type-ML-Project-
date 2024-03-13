@@ -1,4 +1,4 @@
-# Predictive Failure Machine System - Machine Learning Project Report
+# Predicting Machine Failure Type - Machine Learning Project Report
 
 ## Domain Proyek
 
@@ -7,9 +7,9 @@ Perkembangan industri modern, khususnya yang berkaitan dengan konsep Industri 4.
 Pemeliharaan Prediktif menggabungkan kemampuan pengumpulan data dengan kapasitas untuk melakukan analisis yang efektif dan terintegrasi (*Machine Learning*) [[7](https://ieeexplore.ieee.org/document/8449150)]. Teknik pembelajaran mesin (ML) muncul sebagai alat yang menjanjikan dalam aplikasi PM untuk memprediksi kegagalan peralatan guna meminimalkan waktu henti dan mendapatkan keuntungan bagi perusahaan. Secara khusus, metode regresi sering digunakan untuk memprediksi kerusakan peralatan karena kemampuannya dalam memodelkan hubungan antara variabel yang berbeda [[8](https://www.sciencedirect.com/science/article/abs/pii/S0141029620340633)].
 
 ## Business Understanding
-Pengembangan model *Predictive Failure Machine System* memiliki potensi yang signifikan sebagai alat bantu dalam pengambilan keputusan khususnya pada bidang industri dan manufaktur.
+Pengembangan model *Predicting Machine Failure Type* memiliki potensi yang signifikan sebagai alat bantu dalam pengambilan keputusan khususnya pada bidang industri dan manufaktur.
 
-*Predictive Failure Machine System* adalah sistem yang memiliki potensi besar dalam meningkatkan efisiensi operasional, mengurangi downtime produksi, meningkatkan keselamatan dan kesehatan pekerja, serta meningkatkan kualitas produk dan membantu perusahaan untuk tetap kompetitif di pasar yang semakin kompetitif dan dinamis.
+*Predicting Machine Failure Type* adalah sistem yang memiliki potensi besar dalam meningkatkan efisiensi operasional, mengurangi downtime produksi, meningkatkan keselamatan dan kesehatan pekerja, serta meningkatkan kualitas produk dan membantu perusahaan untuk tetap kompetitif di pasar yang semakin kompetitif dan dinamis.
 
 ### Problem Statements
 - Berdasarkan eksplorasi *dataset*, fitur apa saja yang mempengaruhi dalam menentukan kerusakan mesin?
