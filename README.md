@@ -54,18 +54,22 @@ Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivaria
 Analisis Univariat
 
 Analisis Univariat merupakan bentuk analisis data yang hanya merepresentasikan informasi yang terdapat pada satu variabel. Jenis visualisasi ini umumnya digunakan untuk memberikan gambaran terkait distribusi sebuah variabel dalam suatu *dataset*. Berikut adalah visualisasi EDA dari Analisis Univariate dari data kategori dan numerik:
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/be01e8ff-c380-4a05-b828-46eaa673a47e)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/c2280e4e-456f-48ab-ab45-94a5ac16f109)
+
+
 
 Gambar 4.1 Analisis Univariat *Type* (Data Kategori)
 
 Berdasarkan Gambar 4.1, diketahui bahwa terdapat 3 variansi kualitas mesin, yaitu Low (L), Medium (M), dan High (H). *Dataset* di dominansi oleh Tipe mesin 'L' yang berjulah 6000 buah, Tipe 'M' berjumlah 2997 buah, dan Tipe 'H' berjumlah 1003 buah.
 
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/64971f85-2da3-4b4b-8365-607111495ec6)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/117491cb-6618-47c9-8cf2-000ca6abd98c)
+
 Gambar 4.2 Analisis Univariat *Failure Type* (Data Kategori)
 
 Berdasarkan Gambar 4.2, diketahui bahwa distribusi data kategori 'Failure Type' memiliki perbandingan jumlah yang tidak sama. Data di dominansi oleh data kategori 'No Failure' dengan nilai 9652. Sementara itu, data paling sedikit adalah kategori 'Random Failures' dengan nilai 18.
 
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/e1b7208c-75f7-41d6-9cd4-25b5e77d87f9)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/74ea97eb-ef04-4bfd-9502-d78be24484b1)
+
 Gambar 4.3 Analisis Univariat (Data Numerik)
 
 Berdasarkan Gambar 4.3, Diketahui karakteristik dari data numerik adalah sebagai berikut:
@@ -78,14 +82,17 @@ Berdasarkan Gambar 4.3, Diketahui karakteristik dari data numerik adalah sebagai
 Anaisis Bivariat
 
 Analisis Bivariat adalah analisis statistik yang dilakukan untuk memahami hubungan antara dua variabel dalam sebuah *dataset*. Ini melibatkan hubungan atau ketergantungan antara dua variabel secara bersama-sama. Berikut adalah visualisasi EDA dari Analisis Bivariate:
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/9a73cf86-583b-4265-9864-1b4c35530048)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/ec915b5a-1ca7-40a8-81fb-7a0980332844)
+
 Gambar 4.4 Analisis Bivariate antara kategori 'Target' dengan Fitur *dataset*
 
 Berdasarkan Gambar 4.4, Hubungan antara setiap fitur dengan kategori 'Type' di dominansi oleh data dengan nilai Target 0, hal ini berbanding lurus dengan lebih banyaknya data dengan jenis kegagalan 'No Failure' dibanding dengan jenis kegagalan lainnya.
 
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/7fa058b6-79ab-443f-b9cb-813b4365c290)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/e462cff7-2b2c-4d88-aeb9-32c94d0dc5e0)
+
 Gambar 4.5 Analisis Bivariate antara Data Numerik dengan *Failure Type*
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a4c93b8e-e2bd-4a08-8aee-a24ee0c5b6bc)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/8be596c8-a4a5-48c0-9aca-d35a95decadf)
+
 Gambar 4.6 Analisis Bivariate antara Data Numerik dengan 'Failure Type'
 
 Berdasarkan Gambar 4.5 tampak persebaran data 'Failure Type' yang relatif terhadap data numerik. Berikut adalah karakteristik hubungan kedua kategori tersebut:
@@ -108,10 +115,12 @@ Tabel diatas adalah Tabel yang menjelaskan hubungan dari banykanya nilai antara 
 Analisis Multivariat
 
 Analisis Multivariat merupakan jenis analisis data yang terdapat dalam lebih dari dua variabel. Jenis visualisasi ini digunakan untuk merepresentasikan hubungan dan pola yang terdapat dalam multidimensional data. Berikut adalah visualisasi EDA dari Analisis Multivariate:
-![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/cb036de3-e3e1-4021-b359-f536a610a32e)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/cbe85e8f-514a-4e5c-b974-191538953ca0)
+
 Gambar 4.7 Analisis Multivariat
 
 Pada Gambar 4.7, dengan menggunakan fungsi pairplot dari library seaborn, tampak terlihat relasi pasangan dalam dataset. Dari gambar, terlihat plot relasi masing-masing fitur numerik pada dataset. Pada pola sebaran data grafik pairplot, terlihat bahwa fitur numerik 'Rotational Speed [rpm]' memiliki korelasi dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sementara itu, tampak sebaran pair plot antara data numerik dengan fitru 'Target'.
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/288cb974-c1a8-4604-b4ba-17b0a4dd87f4)
 
 Gambar 4.8 Correlation Matrix Numeric Fiture
 Gambar 4.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
@@ -131,8 +140,9 @@ Pada proses *Data Cleaning*, secara garis besar, terdapat tiga metode yang dapat
 Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*.
 
 ### Outliers
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/ab740a5b-56f8-40d8-91a8-73e862e37d3a)
 
-Berdasarkan boxplot, ditemui kemungkinan outlier pada fitur 'Rotation speed [rpm]' dan 'Torque [Nm]'. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
+Berdasarkan boxplot, ditemui adanya kemungkinan outlier. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
 
 ### Anomalie Target
 Dilakukan pengamatan terhadap distribusi target untuk menemukan ketidakseimbangan dan memperbaikinya sebelum membagi dataset. Anomali pertama yang ditemukan adalah adanya jenis kegagalan 'Random Failures' yang memiliki target 0.
@@ -179,30 +189,34 @@ Berikut adalah hasil encoding pada fitur 'Failure Type':
 pca = PCA(n_components=2, random_state=123)
 ```
 Reduksi dimensi dengan PCA (Principal Component Analysis) adalah teknik yang digunakan untuk mengurangi jumlah fitur (variabel) dalam dataset, tetapi tetap mempertahankan sebanyak mungkin informasi yang mungkin. Berdasarkan analisis multivariat yang dilakukan, diketahui bahwa terdapat korelasi antara 'Rotational Speed [rpm]' dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sehingga, dilakukan reduksi PCA pada fitur-fitur tersebut. 
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/de90ce60-390e-49a4-9cde-1d510c29d9fd)
 
-Gambar 3 Visualisasi Hubungan antar Fitur sebelum Reduksi PCA
+Gambar 3 Visualisasi Hubungan antar Fitur 'Air Temperature [K]' dan 'Process Temperature [K]'sebelum Reduksi PCA
 Hasil dari Reduksi PCA adalah 94.4% informasi pada kedua fitur 'Air temperature [K]' dan 'Process temperature [K]' terdapat pada PC1. Sedangkan sisanya, sebesar 5.6% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Temperature' menggantikan kedua fitur lainnya ('Air temperature [K]' dan 'Process temperature [K]'). 
 
-Gambar 3 Visualisasi Hubungan antar Fitur sebelum Reduksi PCA
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/83a9167a-f683-4dc8-ab4d-d4cd1e4000dc)
+
+Gambar 3 Visualisasi Hubungan antar Fitur 'Rotational Speed [rpm]' dan 'Torque [Nm]'sebelum Reduksi PCA
 Output dari kode diatas adalah 99.9% informasi pada kedua fitur 'Rotational speed [rpm]' dan 'Torque [Nm]' terdapat pada PC1. Sedangkan sisanya, sebesar 0.1% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Machine Power' menggantikan kedua fitur lainnya ('Rotational speed [rpm]' dan 'Torque [Nm]').
 
 
 ### Train-Test Split
-Setelah data dibersihkan, dataset dibagi menjadi data train dan data test untuk proses Modeling, dimana rasio pembagian data yang dipilih adalah 90:10 mengingat data test untuk rasio tersebut sudah terbilang cukup. Namun, diketahui bahwa jumlah kategori pada fitur 'Failure Type' tidak seimbang. Sehingga untuk menangani hal tersebut, dilakukan Oversampling dengan SMOTE.
+Setelah data dibersihkan, dataset dibagi menjadi data train dan data test untuk proses Modeling, dimana rasio pembagian data yang dipilih adalah 80:20 mengingat data test untuk rasio tersebut sudah terbilang cukup. Namun, diketahui bahwa jumlah kategori pada fitur 'Failure Type' tidak seimbang. Sehingga untuk menangani hal tersebut, dilakukan Oversampling dengan SMOTE.
 
 ### Over Sampling With SMOTE
 Oversampling dengan SMOTE (Synthetic Minority Over-sampling Technique) adalah teknik yang digunakan untuk menangani ketidakseimbangan kelas dalam dataset dengan meningkatkan jumlah sampel dalam kelas minoritas. Oversampling dengan SMOTE dilakukan agar sample data antar kategori dapat seimbang ketika dilakukan trainining model. 
 ```
 smt = SMOTETomek(sampling_strategy ='auto',random_state=123)
 ```
-Berikut adalah grafik pembagian sample data train
+Berikut adalah grafik pembagian sample data train:
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/d7c782f6-7cd6-46d9-be78-f98218a2c97c)
 
 
 Berikut adalah detail dari dataset:
-Total sampel di dalam dataset train: 15848
-Total sampel di dalam dataset test: 1761
+Total sampel di dalam dataset train: 38306
+Total sampel di dalam dataset test: 1995
 
 ## Modeling
 Model yang digunakan untuk memprediksi kegagalan mesin adalah model regresi. Dalam bentuk yang sederhana, regresi terdiri dari intersep dan slope yang dituliskan dalam rumusan berikut:
@@ -242,7 +256,7 @@ params = {'n_estimators' : [50,80,100],
 Berdasarkan hasil pengujian, terpilih grid.best_params_ yaitu 
 ```
 {'max_depth': 10,
- 'min_samples_leaf': 4,
+ 'min_samples_leaf': 2,
  'min_samples_split': 2,
  'n_estimators': 100}
 ```
@@ -275,17 +289,18 @@ Berikut adalah tabel yang menyajikan perbandingan 4 buah model:
 
 |     |Model 1|Model 2|Model 3|Model 4|
 |---|---|---|---|---|
-|R<sup>2</sup>|-570382.6973365095|-569403.1976127202|-17.320442503889478|-24.351213845094517|
-|MSE|282.05770282124723|281.8154149063259|1.5985358926217452|1.8804153679174018|
-|MAE|280.3345850405439|280.0937710596088|1.58654|1.8667685602730606|
+|R<sup>2</sup>|-142571.22047889986|-142562.82814195784|-7.092059116469194|-9.23334987107827|
+|MSE|117.51993191251806|117.51647302909402|0.8853675447084435|0.9956414891470533|
+|MAE|83.15954515654357|83.15714189178568|0.6505664160401003|0.7491044047744142|
 
 Tabel 2. Perbandingan Performa MAE, MSE, dan R<sup>2</sup> Model
 
-Berdasarkan Tabel 2, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -1.880080745581838 dan -2.432728538383974.
+Berdasarkan Tabel 2, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -7.092059116469194 dan -9.23334987107827.
 
 Secara lebih jauh perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 4 berikut.
 
-![download (1)](https://github.com/ahmadsuaif/Proyek-Pertama-Predictive-Analytics/assets/66425290/a46a2fa1-d5c5-4371-a18f-409a84bb42da)
+![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a3d059c1-400a-4501-b08a-ecad3680d111)
+
 
 Gambar 4. Perbandingan Model berdasarkan Nilai Error (dalam 1e6)
 
@@ -294,13 +309,13 @@ Berdasarkan Gambar 4 dapat terlihat bahwa nilai error train dan test dari Model 
 Selain itu dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
 
 |     |y_true|prediksi_LR|prediksi_RR|prediksi_RF1|prediksi_RF2|
-|---|---|---|---|---|---|
-|15732|341700|218287.6|218309.3|347466.0|315645.2|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|4979|1|0.0|0.0|1.0|1.0|
 
 Tabel 2. Perbandingan Model
 
 
-Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 341700 dan nilai RF1 dan RF2 masing-masing yaitu 347466.0 dan 315645.2. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
+Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
 
 ## Referensi:
 [1] Harja, H.B. et al. (2019) ‘Development of tools utilization monitoring system on labor-intensive manufacturing industries’, AIP Conference Proceedings [Preprint]. doi:10.1063/1.5138309.
