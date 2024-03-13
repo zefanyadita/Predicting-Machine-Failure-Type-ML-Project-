@@ -124,6 +124,7 @@ Pada Gambar 3.7, dengan menggunakan fungsi pairplot dari library seaborn, tampak
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/288cb974-c1a8-4604-b4ba-17b0a4dd87f4)
 
 Gambar 3.8 Correlation Matrix Numeric Fiture
+
 Gambar 3.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
 
 Jika diamati, fitur 'Target' memiliki skor korelasi yang cukup untuk menunjukkan adanya hubungan korelasi dengan fitur numerik. Semenara itu, fitur UID memiliki korelasi yang negatif. Sehingga, fitur UID dan Product ID tersebut akan dieliminasi atau drop.
@@ -241,13 +242,12 @@ Kelebihan regresi:
 - Kekuatan Prediktor dalam mengidentifikasi sekuat apa pengaruh yang diberikan oleh variabel prediktor (variabel independen) terhadap variabel lainnya (variabel dependen).
 - Dapat memprediksi nilai/tren di masa yang mendatang
 
-Kelemahan dari model regresi adalah karena hasil ramalan dari analisis regresi merupakan nilai estimasi sehingga kemungkinan untuk tidak sesuai dengan data aktual tetaplah ada.
-
-Pada proyek *Predictive Machine Failure System*, digunakan 4 macam algoritma regresi, yaitu:
+Kelemahan dari model regresi adalah karena hasil ramalan dari analisis regresi merupakan nilai estimasi sehingga kemungkinan untuk tidak sesuai dengan data aktual tetaplah ada. Pada proyek *Predictive Machine Failure System*, digunakan 4 macam algoritma regresi, yaitu:
 - Linear Regression
 - Ridge Regression
 - Random Forest Regresor
 - Random Forest Regresor - Tunning GridSearchCV
+
 Berikut adalah penjelasan tiap algoritma regresi:
 - Regresi linear adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan nilai data lain yang terkait dan diketahui dimana secara matematis dimodelkan sebagai persamaan linier
 - Regresi ridge merupakan metode estimasi koefisien regresi yang diperoleh melalui penambahan konstanta bias c.
@@ -303,23 +303,20 @@ Tabel 5.1 Perbandingan Performa MAE, MSE, dan R<sup>2</sup> Model
 
 Berdasarkan Tabel 5.1, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -7.092059116469194 dan -9.23334987107827.
 
-Secara lebih jauh perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 4 berikut.
+Secara lebih jauh perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 5.5 berikut.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a3d059c1-400a-4501-b08a-ecad3680d111)
 
 
 Gambar 5.5 Perbandingan Model berdasarkan Nilai Error (dalam 1e6)
 
-Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya.
+Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya. Juga dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
 
-Selain itu dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
+Tabel 5.2 Perbandingan Model
 
 |     |y_true|prediksi_LR|prediksi_RR|prediksi_RF1|prediksi_RF2|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |4979|1|0.0|0.0|1.0|1.0|
-
-Tabel 5.2 Perbandingan Model
-
 
 Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
 
