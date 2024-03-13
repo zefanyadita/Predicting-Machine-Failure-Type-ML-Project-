@@ -73,8 +73,8 @@ Berdasarkan Gambar 3.2, diketahui bahwa distribusi data kategori 'Failure Type' 
 Gambar 3.3 Analisis Univariat (Data Numerik)
 
 Berdasarkan Gambar 3.3, Diketahui karakteristik dari data numerik adalah sebagai berikut:
-- Terdapat 600 mesin yang memiliki suhu udara (Air Tmeperature [K]) antara 297K hingga 303K. Sementara sisanya memiliki suhu udara yang lebih rendah selama bekerja.
-- Terdapat  lebih dari 800 mesin yang mencapai suhu proses (Process Tmeperature [K]) antara 310K hingga 311K. Juga mesin lain yang suhunya berada di antara 308K hingga 312K selama pemrosesan.
+- Terdapat 600 mesin yang memiliki suhu udara (Air Temperature [K]) antara 297K hingga 303K. Sementara sisanya memiliki suhu udara yang lebih rendah selama bekerja.
+- Terdapat  lebih dari 800 mesin yang mencapai suhu proses (Process Temperature [K]) antara 310K hingga 311K. Juga mesin lain yang suhunya berada di antara 308K hingga 312K selama pemrosesan.
 - Terdapat  600 mesin yang mencapai putaran rotasi (Rotation Speed [rpm]) 1500 rpm, 500 mesin mencapai kecepatan rotasi 1400 hingga 1500 rpm, dan hanya ada sedikit mesin yang mencapai kecepatan rotasi maksimum 2000 rpm, mungkin kurang dari 100 mesin.
 - Terdapat  500 mesin yang mencapai torsi (Torque [Nm])antara 35Nm hingga 45Nm.
 - Terdapat  mesin yang mungkin menghadapi kegagalan karena keausan pahat(Tool Wear [min]) (min) hingga 220 keausan pahat min.
