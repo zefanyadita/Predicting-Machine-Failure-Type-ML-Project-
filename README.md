@@ -186,10 +186,10 @@ Encoding data adalah proses mengonversi variabel kategoris menjadi bentuk numeri
 Berikut adalah hasil encoding pada fitur 'Failure Type':
 | Failure Type | Encoded | Count |
 | :---: | :---: | :---: |
-| No Failure | 1 | 9643 |
 | Heat Dissipation Failure | 0 | 112 |
-| Power Failure | 3 | 95 |
+| No Failure | 1 | 9643 |
 | Overstrain Failure | 2 | 78 |
+| Power Failure | 3 | 95 |
 | Tool Wear Failure | 4 | 45 |
 
 ### Reduction with PCA
@@ -225,6 +225,15 @@ Berikut adalah grafik pembagian sample data train:
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/d7c782f6-7cd6-46d9-be78-f98218a2c97c)
 
 Gambar 4.4 Grafik pembagian sample data train
+
+| Failure Type | Encoded | Dist |
+| :---: | :---: | :---: |
+| Heat Dissipation Failure | 0 | 7677 |
+| No Failure | 1 | 7602 |
+| Overstrain Failure | 2 | 7703 |
+| Power Failure | 3 | 7623 |
+| Tool Wear Failure | 4 | 7701 |
+
 
 Berikut adalah detail dari dataset:
 - Total sampel di dalam dataset train: 38306
