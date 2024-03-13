@@ -267,20 +267,22 @@ Berikut adalah penjelasan tiap algoritma regresi:
 - Regresi ridge merupakan metode estimasi koefisien regresi yang diperoleh melalui penambahan konstanta bias c.
 - Random forest adalah suatu algoritma yang digunakan pada klasifikasi data dalam jumlah yang besar dimana teknik klasifikasi *random forest* dilakukan melalui penggabungan pohon dengan melakukan training pada sampel data yang dimiliki.
 - Random Forest Regresor dengan Tunning GridSearchCV digunakan untuk meningkatkan model. Paramater yang di-tuning antara lain n_estimators', 'max_depth', 'min_samples_split', dan 'min_samples_leaf. Untuk memudahkan proses *tuning* digunakan GridSearchCV. GridSearchCV itu sendiri merupakan bagian dari modul scikit-learn yang dapat digunakan untuk mendapatkan nilai *hyperparameter* secara otomatis. Grid Search adalah metode yang digunakan untuk mencari parameter yang paling tepat untuk meningkatkan performa model dengan mencoba seluruh kombinasi *hyperparameter* yang diberikan. Berikut adalah nilai parameter *tuning*
-```
-params = {'n_estimators' : [50,80,100],
+  ```
+  params = {'n_estimators' : [50,80,100],
           'max_depth' : [3,5,10],
            'min_samples_split':[2,3,4],
             'min_samples_leaf': [2,3,4]}
-```
-Berdasarkan hasil pengujian, terpilih grid.best_params_ yaitu 
-```
-{'max_depth': 10,
- 'min_samples_leaf': 2,
- 'min_samples_split': 2,
- 'n_estimators': 100}
-```
-Parameter dengan nilai inilah yang kemudian dibuat sebagai model.
+  ```
+
+  Berdasarkan hasil pengujian, terpilih grid.best_params_ yaitu
+  ```
+  {'max_depth': 10,
+  'min_samples_leaf': 2,
+  'min_samples_split': 2,
+  'n_estimators': 100}
+  ```
+
+  Parameter dengan nilai ini kemudian dibuat sebagai model 4.
 
 Hasil dari pemodelan dengan 4 macam algoritma regresi tersebut kemudian dibandingkan untuk mendapatkan model terbaik.
 
@@ -303,7 +305,7 @@ Var(y) mewakili varians dari nilai yang diamati.
 Berikut merupakan penjelasan kegunaan dari masing-masing metrik yang digunakan:
 - MAE menghitung rata-rata dari selisih absolut antara nilai prediksi dan nilai aktual. Semakin kecil nilai MAE, semakin baik kualitas model tersebut.
 - MSE menghitung rata-rata dari selisih kuadrat antara nilai prediksi dan nilai aktual. Semakin kecil nilai MSE, semakin baik kualitas model tersebut.
-- R<sup>2</sup> digunakan untuk menilai seberapa besar pengaruh variabel independen tertentu terhadap variabel dependen
+- R<sup>2</sup> digunakan untuk menilai seberapa besar pengaruh variabel independen tertentu terhadap variabel dependen.
 
 Berikut adalah tabel yang menyajikan perbandingan 4 buah model:
 
@@ -317,14 +319,14 @@ Tabel 5.1 Perbandingan Performa MAE, MSE, dan R<sup>2</sup> Model
 
 Berdasarkan Tabel 5.1, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -7.092059116469194 dan -9.23334987107827.
 
-Secara lebih jauh perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 5.5 berikut.
+Perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 5.5 berikut.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a3d059c1-400a-4501-b08a-ecad3680d111)
 
 
-Gambar 5.5 Perbandingan Model berdasarkan Nilai Error (dalam 1e6)
+Gambar 5.5 Perbandingan Model berdasarkan Nilai Error
 
-Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya. Juga dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
+Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya. Juga dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 5.2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
 
 Tabel 5.2 Perbandingan Model
 
