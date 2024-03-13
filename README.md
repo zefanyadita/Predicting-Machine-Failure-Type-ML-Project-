@@ -48,31 +48,30 @@ Berikut merupakan detail dari *dataset* yang digunakan untuk pembuatan model:
 - Target: Mesin gagal atau tidak yang dinilai dengan 0 atau 1.
 - Failure Type: Menyatakan jenis kegagalan mesin. Terdapat 5 jenis kegagalan, yaitu Tool Wear Failure (TWF), Heat Dissipation Failure (HDF), Power Failure (PWF), Overstrain Failure (OSF), Random Failures (RNF).
 
-## DATA ANALYSIS (EDA)
+### Data Analysis (EDA)
 Untuk memahami data lebih lanjut, dilakukan Analisis Univariat, Analisis Bivariate dan Analisis Multivariat, serta Visualisasi Data melalui EDA. EDA/Exploratory Data Analysis adalah proses analisis data yang digunakan untuk menjelajahi, memahami, dan meringkas karakteristik dasar dari dataset secara visual dan deskriptif. Tujuan utama dari EDA adalah untuk memahami struktur dataset, menemukan pola atau tren yang menarik, serta mempersiapkan data untuk tahap analisis yang lebih lanjut.
 
 Analisis Univariat
 
 Analisis Univariat merupakan bentuk analisis data yang hanya merepresentasikan informasi yang terdapat pada satu variabel. Jenis visualisasi ini umumnya digunakan untuk memberikan gambaran terkait distribusi sebuah variabel dalam suatu *dataset*. Berikut adalah visualisasi EDA dari Analisis Univariate dari data kategori dan numerik:
+
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/c2280e4e-456f-48ab-ab45-94a5ac16f109)
 
+Gambar 3.1 Analisis Univariat *Type* (Data Kategori)
 
-
-Gambar 4.1 Analisis Univariat *Type* (Data Kategori)
-
-Berdasarkan Gambar 4.1, diketahui bahwa terdapat 3 variansi kualitas mesin, yaitu Low (L), Medium (M), dan High (H). *Dataset* di dominansi oleh Tipe mesin 'L' yang berjulah 6000 buah, Tipe 'M' berjumlah 2997 buah, dan Tipe 'H' berjumlah 1003 buah.
+Berdasarkan Gambar 3.1, diketahui bahwa terdapat 3 variansi kualitas mesin, yaitu Low (L), Medium (M), dan High (H). *Dataset* di dominansi oleh Tipe mesin 'L' yang berjulah 6000 buah, Tipe 'M' berjumlah 2997 buah, dan Tipe 'H' berjumlah 1003 buah.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/117491cb-6618-47c9-8cf2-000ca6abd98c)
 
-Gambar 4.2 Analisis Univariat *Failure Type* (Data Kategori)
+Gambar 3.2 Analisis Univariat *Failure Type* (Data Kategori)
 
-Berdasarkan Gambar 4.2, diketahui bahwa distribusi data kategori 'Failure Type' memiliki perbandingan jumlah yang tidak sama. Data di dominansi oleh data kategori 'No Failure' dengan nilai 9652. Sementara itu, data paling sedikit adalah kategori 'Random Failures' dengan nilai 18.
+Berdasarkan Gambar 3.2, diketahui bahwa distribusi data kategori 'Failure Type' memiliki perbandingan jumlah yang tidak sama. Data di dominansi oleh data kategori 'No Failure' dengan nilai 9652. Sementara itu, data paling sedikit adalah kategori 'Random Failures' dengan nilai 18.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/74ea97eb-ef04-4bfd-9502-d78be24484b1)
 
-Gambar 4.3 Analisis Univariat (Data Numerik)
+Gambar 3.3 Analisis Univariat (Data Numerik)
 
-Berdasarkan Gambar 4.3, Diketahui karakteristik dari data numerik adalah sebagai berikut:
+Berdasarkan Gambar 3.3, Diketahui karakteristik dari data numerik adalah sebagai berikut:
 - Terdapat 600 mesin yang memiliki suhu udara (Air Tmeperature [K]) antara 297K hingga 303K. Sementara sisanya memiliki suhu udara yang lebih rendah selama bekerja.
 - Terdapat  lebih dari 800 mesin yang mencapai suhu proses (Process Tmeperature [K]) antara 310K hingga 311K. Juga mesin lain yang suhunya berada di antara 308K hingga 312K selama pemrosesan.
 - Terdapat  600 mesin yang mencapai putaran rotasi (Rotation Speed [rpm]) 1500 rpm, 500 mesin mencapai kecepatan rotasi 1400 hingga 1500 rpm, dan hanya ada sedikit mesin yang mencapai kecepatan rotasi maksimum 2000 rpm, mungkin kurang dari 100 mesin.
@@ -82,20 +81,22 @@ Berdasarkan Gambar 4.3, Diketahui karakteristik dari data numerik adalah sebagai
 Anaisis Bivariat
 
 Analisis Bivariat adalah analisis statistik yang dilakukan untuk memahami hubungan antara dua variabel dalam sebuah *dataset*. Ini melibatkan hubungan atau ketergantungan antara dua variabel secara bersama-sama. Berikut adalah visualisasi EDA dari Analisis Bivariate:
+
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/ec915b5a-1ca7-40a8-81fb-7a0980332844)
 
-Gambar 4.4 Analisis Bivariate antara kategori 'Target' dengan Fitur *dataset*
+Gambar 3.4 Analisis Bivariate antara kategori 'Target' dengan Fitur *dataset*
 
-Berdasarkan Gambar 4.4, Hubungan antara setiap fitur dengan kategori 'Type' di dominansi oleh data dengan nilai Target 0, hal ini berbanding lurus dengan lebih banyaknya data dengan jenis kegagalan 'No Failure' dibanding dengan jenis kegagalan lainnya.
+Berdasarkan Gambar 3.4, Hubungan antara setiap fitur dengan kategori 'Type' di dominansi oleh data dengan nilai Target 0, hal ini berbanding lurus dengan lebih banyaknya data dengan jenis kegagalan 'No Failure' dibanding dengan jenis kegagalan lainnya.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/e462cff7-2b2c-4d88-aeb9-32c94d0dc5e0)
 
-Gambar 4.5 Analisis Bivariate antara Data Numerik dengan *Failure Type*
+Gambar 3.5 Analisis Bivariate antara Data Numerik dengan *Failure Type*
+
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/8be596c8-a4a5-48c0-9aca-d35a95decadf)
 
-Gambar 4.6 Analisis Bivariate antara Data Numerik dengan 'Failure Type'
+Gambar 3.6 Analisis Bivariate antara Data Numerik dengan 'Failure Type'
 
-Berdasarkan Gambar 4.5 tampak persebaran data 'Failure Type' yang relatif terhadap data numerik. Berikut adalah karakteristik hubungan kedua kategori tersebut:
+Berdasarkan Gambar 3.5 tampak persebaran data 'Failure Type' yang relatif terhadap data numerik. Berikut adalah karakteristik hubungan kedua kategori tersebut:
 - Rata-rata jenis kegagalan pada fitur 'Air Temperature [K]' dan 'Process Temperature [K]' cenderung sama yaitu berkisar pada nilai 300K.
 - Pada fitur 'Rotational Speed [rpm]' sebaran nilainya terhadap jenis kegagalan bervariasi, 'No Failure', 'Tool Wear Failure', dan 'Random Failures' berada pada nilai 1500 rpm. Sementara 'Power Failure' berada pada kisaran nilai >1500 rpm.
 - Pada fitur 'Torque [Nm]', rata-rata dari jenis kegagalan cenderung bervariasi. Rentangnya berada antara 30 hingga 60.
@@ -109,7 +110,7 @@ Berikut adalah Tabel Analisis Bivariate antara fitur 'Type' dengan 'Failure Type
 | L | 74 | 5757 | 73 | 59 | 12 | 25 |
 | 8 | 30 | 2916 | 4 | 31 | 2 | 14 |
 
-Tabel 1. Analisis Bivariate fitur 'Type' dengan 'Failure Type'
+Tabel 3.1 Analisis Bivariate fitur 'Type' dengan 'Failure Type'
 Tabel diatas adalah Tabel yang menjelaskan hubungan dari banykanya nilai antara  variasi tipe mesin dengan jenis kegagalan yang terjadi. Sama seperti Gambar 4.1, Kegagalan mesin pada setiap jenis kegagalan di dominansi oleh mesin tipe 'L'.
 
 Analisis Multivariat
@@ -117,13 +118,13 @@ Analisis Multivariat
 Analisis Multivariat merupakan jenis analisis data yang terdapat dalam lebih dari dua variabel. Jenis visualisasi ini digunakan untuk merepresentasikan hubungan dan pola yang terdapat dalam multidimensional data. Berikut adalah visualisasi EDA dari Analisis Multivariate:
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/cbe85e8f-514a-4e5c-b974-191538953ca0)
 
-Gambar 4.7 Analisis Multivariat
+Gambar 3.7 Analisis Multivariat
 
-Pada Gambar 4.7, dengan menggunakan fungsi pairplot dari library seaborn, tampak terlihat relasi pasangan dalam dataset. Dari gambar, terlihat plot relasi masing-masing fitur numerik pada dataset. Pada pola sebaran data grafik pairplot, terlihat bahwa fitur numerik 'Rotational Speed [rpm]' memiliki korelasi dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sementara itu, tampak sebaran pair plot antara data numerik dengan fitru 'Target'.
+Pada Gambar 3.7, dengan menggunakan fungsi pairplot dari library seaborn, tampak terlihat relasi pasangan dalam dataset. Dari gambar, terlihat plot relasi masing-masing fitur numerik pada dataset. Pada pola sebaran data grafik pairplot, terlihat bahwa fitur numerik 'Rotational Speed [rpm]' memiliki korelasi dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sementara itu, tampak sebaran pair plot antara data numerik dengan fitru 'Target'.
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/288cb974-c1a8-4604-b4ba-17b0a4dd87f4)
 
-Gambar 4.8 Correlation Matrix Numeric Fiture
-Gambar 4.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
+Gambar 3.8 Correlation Matrix Numeric Fiture
+Gambar 3.8 merupakan Correlation Matrix untuk Fitur Numerik. Matrix ini menunjukkan hubungan antar fitur dalam nilai korelasi. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
 
 Jika diamati, fitur 'Target' memiliki skor korelasi yang cukup untuk menunjukkan adanya hubungan korelasi dengan fitur numerik. Semenara itu, fitur UID memiliki korelasi yang negatif. Sehingga, fitur UID dan Product ID tersebut akan dieliminasi atau drop.
 
@@ -142,6 +143,7 @@ Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*.
 ### Outliers
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/ab740a5b-56f8-40d8-91a8-73e862e37d3a)
 
+Gambar 4.1
 Berdasarkan boxplot, ditemui adanya kemungkinan outlier. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
 
 ### Anomalie Target
@@ -189,20 +191,22 @@ Berikut adalah hasil encoding pada fitur 'Failure Type':
 pca = PCA(n_components=2, random_state=123)
 ```
 Reduksi dimensi dengan PCA (Principal Component Analysis) adalah teknik yang digunakan untuk mengurangi jumlah fitur (variabel) dalam dataset, tetapi tetap mempertahankan sebanyak mungkin informasi yang mungkin. Berdasarkan analisis multivariat yang dilakukan, diketahui bahwa terdapat korelasi antara 'Rotational Speed [rpm]' dengan fitur 'Torque [Nm]' serta korelasi antara fitur 'Air Temperature [K]' dengan fitur 'Process Temperature [K]'. Sehingga, dilakukan reduksi PCA pada fitur-fitur tersebut. 
+
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/de90ce60-390e-49a4-9cde-1d510c29d9fd)
 
-Gambar 3 Visualisasi Hubungan antar Fitur 'Air Temperature [K]' dan 'Process Temperature [K]'sebelum Reduksi PCA
+Gambar 4.2 Visualisasi Hubungan antar Fitur 'Air Temperature [K]' dan 'Process Temperature [K]'sebelum Reduksi PCA
+
 Hasil dari Reduksi PCA adalah 94.4% informasi pada kedua fitur 'Air temperature [K]' dan 'Process temperature [K]' terdapat pada PC1. Sedangkan sisanya, sebesar 5.6% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Temperature' menggantikan kedua fitur lainnya ('Air temperature [K]' dan 'Process temperature [K]'). 
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/83a9167a-f683-4dc8-ab4d-d4cd1e4000dc)
 
-Gambar 3 Visualisasi Hubungan antar Fitur 'Rotational Speed [rpm]' dan 'Torque [Nm]'sebelum Reduksi PCA
-Output dari kode diatas adalah 99.9% informasi pada kedua fitur 'Rotational speed [rpm]' dan 'Torque [Nm]' terdapat pada PC1. Sedangkan sisanya, sebesar 0.1% terdapat pada PC2.
+Gambar 4.3 Visualisasi Hubungan antar Fitur 'Rotational Speed [rpm]' dan 'Torque [Nm]'sebelum Reduksi PCA
+
+Hasil dari Reduksi PCA adalah 99.9% informasi pada kedua fitur 'Rotational speed [rpm]' dan 'Torque [Nm]' terdapat pada PC1. Sedangkan sisanya, sebesar 0.1% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Machine Power' menggantikan kedua fitur lainnya ('Rotational speed [rpm]' dan 'Torque [Nm]').
 
 
-### Train-Test Split
 Setelah data dibersihkan, dataset dibagi menjadi data train dan data test untuk proses Modeling, dimana rasio pembagian data yang dipilih adalah 80:20 mengingat data test untuk rasio tersebut sudah terbilang cukup. Namun, diketahui bahwa jumlah kategori pada fitur 'Failure Type' tidak seimbang. Sehingga untuk menangani hal tersebut, dilakukan Oversampling dengan SMOTE.
 
 ### Over Sampling With SMOTE
@@ -211,12 +215,14 @@ Oversampling dengan SMOTE (Synthetic Minority Over-sampling Technique) adalah te
 smt = SMOTETomek(sampling_strategy ='auto',random_state=123)
 ```
 Berikut adalah grafik pembagian sample data train:
+
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/d7c782f6-7cd6-46d9-be78-f98218a2c97c)
 
+Gambar 4.4 Grafik pembagian sample data train
 
 Berikut adalah detail dari dataset:
-Total sampel di dalam dataset train: 38306
-Total sampel di dalam dataset test: 1995
+- Total sampel di dalam dataset train: 38306
+- Total sampel di dalam dataset test: 1995
 
 ## Modeling
 Model yang digunakan untuk memprediksi kegagalan mesin adalah model regresi. Dalam bentuk yang sederhana, regresi terdiri dari intersep dan slope yang dituliskan dalam rumusan berikut:
@@ -293,18 +299,18 @@ Berikut adalah tabel yang menyajikan perbandingan 4 buah model:
 |MSE|117.51993191251806|117.51647302909402|0.8853675447084435|0.9956414891470533|
 |MAE|83.15954515654357|83.15714189178568|0.6505664160401003|0.7491044047744142|
 
-Tabel 2. Perbandingan Performa MAE, MSE, dan R<sup>2</sup> Model
+Tabel 5.1 Perbandingan Performa MAE, MSE, dan R<sup>2</sup> Model
 
-Berdasarkan Tabel 2, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -7.092059116469194 dan -9.23334987107827.
+Berdasarkan Tabel 5.1, secara umum Model 3 (RF1) dan Model 4 (RF2) menampilkan hasil performa yang lebih baik dimana masing-masing memiliki nilai R^2 yaitu sebesar -7.092059116469194 dan -9.23334987107827.
 
 Secara lebih jauh perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 4 berikut.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/a3d059c1-400a-4501-b08a-ecad3680d111)
 
 
-Gambar 4. Perbandingan Model berdasarkan Nilai Error (dalam 1e6)
+Gambar 5.5 Perbandingan Model berdasarkan Nilai Error (dalam 1e6)
 
-Berdasarkan Gambar 4 dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya.
+Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya.
 
 Selain itu dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
 
@@ -312,7 +318,7 @@ Selain itu dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rum
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |4979|1|0.0|0.0|1.0|1.0|
 
-Tabel 2. Perbandingan Model
+Tabel 5.2 Perbandingan Model
 
 
 Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
