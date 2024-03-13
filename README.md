@@ -149,11 +149,12 @@ Pada kasus proyek ini, tidak ditemukan *Duplicate Data* dan *Missing Value*.
 
 ![image](https://github.com/zefanyadita/Predictive-Failure-Machine-System-Machine-Learning-Project-/assets/147527401/ab740a5b-56f8-40d8-91a8-73e862e37d3a)
 
-Gambar 4.1
-Berdasarkan boxplot, ditemui adanya kemungkinan outlier. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
+Gambar 4.1 Outlier Fitur Numerik
+
+Berdasarkan boxplot Gambar 4.1, ditemui adanya kemungkinan outlier pada fitur 'Rotational Speed [rpm]' dan fitur 'Torque [Nm]'. Namun, tidak dilakukan penanganan terhadap outlier tersebut. Hal ini dikarenakan dapat menghilangkan informasi yang diperlukan.
 
 ### Anomalie Target
-Dilakukan pengamatan terhadap distribusi target untuk menemukan ketidakseimbangan dan memperbaikinya sebelum membagi dataset. Anomali pertama yang ditemukan adalah adanya jenis kegagalan 'Random Failures' yang memiliki target 0.
+Dilakukan pengamatan terhadap distribusi target untuk menemukan ketidakseimbangan dan memperbaikinya sebelum melakukan pembagian *dataset*. Anomali pertama yang ditemukan adalah adanya jenis kegagalan 'Random Failures' yang memiliki target 0.
 ```
 Failure_machine = machine[['Target','Failure Type']][machine['Target'] == 0]
 Failure_machine.value_counts()
@@ -173,7 +174,7 @@ Failure_machine_Type.value_counts()
 | 0 | No Failure | 9643 |
 | 1 | No Failure | 9 |
 
-Data pada keadaan anomali tersebut merupakan data yang ambigu dikarenakan Kita tidak dapat mengetahui apakah benar-benar terjadi kegagalan atau tidak. Sehingga, untuk menangani hal tersebut 9 data ini dihapus.
+Data pada keadaan anomali tersebut merupakan data yang ambigu dikarenakan tidak dapat diketahui apakah benar-benar terjadi kegagalan atau tidak. Sehingga, untuk menangani hal tersebut 9 data ini dihapus.
 
 ### Encoding
 Encoding data adalah proses mengonversi variabel kategoris menjadi bentuk numerik sehingga dapat dimengerti oleh algoritma machine learning atau model statistik. Dalam hal ini, kita melakukan encoding pada 2 fitur, yaitu fitur 'Type' dan 'Failure Type'. Berikut adalah hasil encoding pada fitur 'Type':
