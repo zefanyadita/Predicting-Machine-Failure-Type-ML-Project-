@@ -327,7 +327,7 @@ Perbandingan Model 1, 2, 3, dan 4 bisa dilihat pada Gambar 5.5 berikut.
 
 Gambar 5.5 Perbandingan Model berdasarkan Nilai Error
 
-Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya. Juga dilakukan perbandingan nilai y_true terhadap nilai prediksi harga rumah dari 4 buah model yang dibuat. Tabel 5.2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
+Berdasarkan Gambar 5.5, dapat terlihat bahwa nilai error train dan test dari Model 3 (RF1) dan Model 4 (RF2) jauh lebih baik dibandingkan model lainnya. Juga dilakukan perbandingan nilai y_true terhadap nilai prediksi tipe kerusakan mesin dari 4 buah model yang dibuat. Tabel 5.2 berikut merupakan hasil dari evaluasi model yang telah dibuat.
 
 Tabel 5.2 Perbandingan Model
 
@@ -335,7 +335,7 @@ Tabel 5.2 Perbandingan Model
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |4979|1|0.0|0.0|1.0|1.0|
 
-Berdasarkan hasil evaluasi, terlihat bahwa prediksi harga rumah dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi harga rumah dengan baik dengan menggunakan *Random Forest Regressor*.
+Berdasarkan hasil evaluasi, terlihat bahwa prediksi tipe kerusakan mesin dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi tipe kerusakan mesin dengan baik dengan menggunakan *Random Forest Regressor*.
 
 ## Referensi:
 [1] Harja, H.B. et al. (2019) ‘Development of tools utilization monitoring system on labor-intensive manufacturing industries’, AIP Conference Proceedings [Preprint]. doi:10.1063/1.5138309.
