@@ -337,6 +337,9 @@ Tabel 5.2 Perbandingan Model
 
 Berdasarkan hasil evaluasi, terlihat bahwa prediksi tipe kerusakan mesin dengan *Random Forest* (RF), baik RF1 (tanpa tuning) ataupun RF2 (dengan tuning) memberikan hasil yang paling mendekati y_true, dimana nilai y_true yaitu 1 dan nilai RF1 dan RF2 masing-masing yaitu 1.0 dan 1.0. Dengan demikian bisa disimpulkan bahwa model yang telah dikembangkan dapat memprediksi tipe kerusakan mesin dengan baik dengan menggunakan *Random Forest Regressor*.
 
+## POSTER
+![My Image](POSTER_Predicting Machine Failure Type.jpg)
+
 ## Referensi:
 [1] Harja, H.B. et al. (2019) ‘Development of tools utilization monitoring system on labor-intensive manufacturing industries’, AIP Conference Proceedings [Preprint]. doi:10.1063/1.5138309.
 
