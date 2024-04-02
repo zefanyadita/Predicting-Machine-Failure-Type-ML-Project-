@@ -217,7 +217,7 @@ Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini
 
 Setelah data dibersihkan, dataset dibagi menjadi data train dan data test untuk proses Modeling, dimana rasio pembagian data yang dipilih adalah 80:20 mengingat data test untuk rasio tersebut sudah terbilang cukup. Namun, diketahui bahwa jumlah kategori pada fitur 'Failure Type' tidak seimbang. Sehingga untuk menangani hal tersebut, dilakukan Oversampling dengan SMOTE.
 
-### Over Sampling With SMOTE
+### Oversampling With SMOTE
 Oversampling dengan SMOTE (Synthetic Minority Over-sampling Technique) adalah teknik yang digunakan untuk menangani ketidakseimbangan kelas dalam dataset dengan meningkatkan jumlah sampel dalam kelas minoritas. Oversampling dengan SMOTE dilakukan agar sample data antar kategori dapat seimbang ketika dilakukan trainining model. 
 ```
 smt = SMOTETomek(sampling_strategy ='auto',random_state=123)
