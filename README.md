@@ -202,6 +202,7 @@ Reduksi dimensi dengan PCA (Principal Component Analysis) adalah teknik yang dig
 
 Gambar 4.2 Visualisasi Hubungan antar Fitur 'Air Temperature [K]' dan 'Process Temperature [K]'sebelum Reduksi PCA
 
+'Air Temperature [K]' dan 'Process Temperature [K]' berkorelasi positif. Korelasi positif antara suhu proses dan suhu udara menunjukkan bahwa kenaikan suhu dalam proses juga berdampak pada peningkatan suhu udara. 
 Hasil dari Reduksi PCA adalah 94.4% informasi pada kedua fitur 'Air temperature [K]' dan 'Process temperature [K]' terdapat pada PC1. Sedangkan sisanya, sebesar 5.6% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Temperature' menggantikan kedua fitur lainnya ('Air temperature [K]' dan 'Process temperature [K]'). 
 
@@ -209,6 +210,7 @@ Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini
 
 Gambar 4.3 Visualisasi Hubungan antar Fitur 'Rotational Speed [rpm]' dan 'Torque [Nm]'sebelum Reduksi PCA
 
+Kecepatan rotasi berkorelasi negatif dengan Torsi. Korelasi negatif antara kecepatan rotasi dan torsi menunjukkan bahwa ketika kecepatan rotasi meningkat, torsi akan cenderung menurun, dan sebaliknya. Ini sesuai dengan prinsip mekanika, di mana untuk meningkatkan torsi pada sebuah mesin, seringkali diperlukan penurunan kecepatan rotasi.
 Hasil dari Reduksi PCA adalah 99.9% informasi pada kedua fitur 'Rotational speed [rpm]' dan 'Torque [Nm]' terdapat pada PC1. Sedangkan sisanya, sebesar 0.1% terdapat pada PC2.
 Berdasarkan hasil reduksi fitur (dimensi), dipertahankan PC1 (komponen). PC1 ini akan direpresentasikan sebagai fitur 'Machine Power' menggantikan kedua fitur lainnya ('Rotational speed [rpm]' dan 'Torque [Nm]').
 
